@@ -1,6 +1,7 @@
 __pycache__
+answer
 checkpoint
 data
 graph
 log
-result/ckpt.pth
+*.pth

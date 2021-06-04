@@ -17,7 +17,7 @@ import datetime
 parser = argparse.ArgumentParser(description='PyTorch CIFAR10 Training')
 # --lr オプションで開始時の学習率を指定
 parser.add_argument('--lr', default=0.1, type=float, help='learning rate')
-# --resume, -r オプションで開始時のモデルを指定
+# --resume, -r オプションで開始時の checkpoint を指定
 parser.add_argument('--resume', '-r', type=str, help='resume from checkpoint')
 # --summary, -s オプションで torchsummary を表示するかを指定
 parser.add_argument('--summary', '-s', action='store_true', help='show torchsummary')
@@ -29,7 +29,7 @@ start_epoch = 0  # 0 か checkpoint のエポック数からスタート
 n_epoch = 250 # epoch の回数
 
 print('==> Preparing data..')
-#変換器の作成
+# 変換器の作成
 transform_train = transforms.Compose([
     transforms.RandomCrop(32, padding=4),
     transforms.RandomHorizontalFlip(),
@@ -41,14 +41,14 @@ transform_test = transforms.Compose([
     transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)) # 正規化する
 ])
 
-#訓練データのダウンロードと変換
+# 訓練データのダウンロードと変換
 trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform_train)
-#訓練データのローダ(読み込み器)の作成
+# 訓練データのローダ(読み込み器)の作成
 trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True, num_workers=2)
 
-#テストデータのダウンロードと変換
+# テストデータのダウンロードと変換
 testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform_test)
-#テストデータのローダ(読み込み器)の作成
+# テストデータのローダ(読み込み器)の作成
 testloader = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False, num_workers=2)
 
 classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
@@ -133,7 +133,7 @@ if not os.path.isdir('checkpoint'):
 
 t = datetime.datetime.now().strftime('%m%d-%H%M')
 LOG_FILE = './log/log-%s.txt' % t
-MODEL_FILE = './checkpoint/ckpt-%s.pth' % t
+CKPT_FILE = './checkpoint/ckpt-%s.pth' % t
 f = open(LOG_FILE, 'w')
 f.write('train_loss, train_accuracy, test_loss, test_accuracy\n')
 f.close()
@@ -155,7 +155,7 @@ for epoch in range(start_epoch, start_epoch+n_epoch):
             'acc': test_accuracy,
             'epoch': epoch,
         }
-        torch.save(state, MODEL_FILE)
+        torch.save(state, CKPT_FILE)
         best_accuracy = test_accuracy
 
     scheduler.step()
