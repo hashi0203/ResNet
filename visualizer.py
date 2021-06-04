@@ -2,13 +2,18 @@ import matplotlib.pyplot as plt
 import numpy as np
 import argparse
 import os
+import glob
 
 parser = argparse.ArgumentParser(description='Visualizer')
-parser.add_argument('file', metavar='FILE', type=str, nargs='*', help='input file')
+parser.add_argument('--file', metavar='FILE', type=str, nargs='*', help='input file(s)')
 
 args = parser.parse_args()
 
-for file in args.file:
+files = args.file
+if files is None:
+    files = glob.glob("./log/*")
+
+for file in files:
     f = open(file, 'r')
     s = f.read()
     f.close()
