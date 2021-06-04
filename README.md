@@ -1,4 +1,4 @@
-# ResNet for CIFAR-10
+# ResNet for CIFAR-10 (96.01 %)
 
 [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) データセット用に [ResNet](https://arxiv.org/pdf/1512.03385.pdf) を実装し，**`96.01 %`** の認識精度を達成しました．
 
