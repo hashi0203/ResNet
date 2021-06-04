@@ -114,7 +114,8 @@ $ python3 cvt-cpu2gpu.py /path/to/ckpt-for-cpu.pth /path/to/ckpt-for-gpu.pth
 
 
 ## 参考文献
-https://arxiv.org/pdf/1512.03385.pdf
-https://github.com/kuangliu/pytorch-cifar
-https://www.bigdata-navi.com/aidrops/2611/
-https://deepage.net/deep_learning/2016/11/30/resnet.html
+ResNet の論文: https://arxiv.org/pdf/1512.03385.pdf<br>
+ResNet の実装: https://github.com/kuangliu/pytorch-cifar<br>
+ResNet の解説: https://www.bigdata-navi.com/aidrops/2611/<br>
+ResNet の解説: https://deepage.net/deep_learning/2016/11/30/resnet.html<br>
+DataParallel のモデルの保存: https://shiba6v.hatenablog.com/entry/2018/10/13/153753
