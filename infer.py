@@ -14,7 +14,7 @@ import argparse
 import datetime
 import glob
 
-parser = argparse.ArgumentParser(description='PyTorch CIFAR10 Training')
+parser = argparse.ArgumentParser(description='PyTorch CIFAR10 Inference')
 # checkpoint を指定
 parser.add_argument('ckpt', type=str, help='specify the checkpoint to use')
 parser.add_argument('--image', type=str, nargs='*', help='specify the images to infer')
