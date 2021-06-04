@@ -1,3 +1,6 @@
+import torch.nn as nn
+import torch.nn.functional as F
+
 # ボトルネックブロックの作成
 class Bottleneck(nn.Module):
     expansion = 4
