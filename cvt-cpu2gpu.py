@@ -7,7 +7,7 @@ parser.add_argument('ckpt_in', type=str, help='specify the checkpoint to convert
 parser.add_argument('ckpt_out', type=str, help='specify the output checkpoint filename')
 args = parser.parse_args()
 
-assert torch.cuda.is_available(), 'Error: to convert checkpoints, you need GPU!'
+assert torch.cuda.is_available(), 'Error: to convert checkpoints, you need a GPU!'
 
 print('==> Building model..')
 net = ResNet101(10) # ResNet101 の方が精度が高かったのでこちらを使用

@@ -43,7 +43,8 @@ $ python3 -u main.py
 - `--summary`, `-s`: torchsummary を標準出力に表示する
 
 その他のパラメータ等は main.py をいじって変更してください．<br>
-`-u` を入れてバッファリングを無効にすると出力結果が即座にログに反映されるようになります．
+`-u` を入れてバッファリングを無効にすると出力結果が即座にログに反映されるようになります．<br>
+checkpoint を指定して再開する時に，エラーが出た時は下の `モデルの変換` の章を見てください．
 
 3. 学習経過の可視
 ```bash
@@ -56,7 +57,7 @@ $ python3 visualizer.py
 ```bash
 $ python3 infer.py /path/to/checkpoint
 ```
-`/path/to/checkpoint` には推論に使いたい checkpoint を指定してください．
+`/path/to/checkpoint` には推論に使いたい checkpoint を指定してください．<br>
 エラーが出た時は下の `モデルの変換` の章を見てください．
 
 オプション
