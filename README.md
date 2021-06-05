@@ -3,8 +3,8 @@
 [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) データセット用に [ResNet](https://arxiv.org/pdf/1512.03385.pdf) を実装し，**`96.01 %`** の認識精度を達成しました．
 
 モデルのダウンロードはこちらからどうぞ．(**クリックするとすぐにダウンロードが開始する**ので注意してください．)
-- GPU 用 (170 MB): https://projects.n-hassy.info/storage/ckpt-gpu.pth
-- CPU 用 (170 MB): https://projects.n-hassy.info/storage/ckpt-cpu.pth
+- GPU 用 (170 MB): https://projects.n-hassy.info/storage/ResNet/ckpt-gpu.pth
+- CPU 用 (170 MB): https://projects.n-hassy.info/storage/ResNet/ckpt-cpu.pth
 
 ![answer](result/answer.png)
 
